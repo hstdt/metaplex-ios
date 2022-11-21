@@ -23,6 +23,19 @@ public enum AccountState {
 }
 
 public struct CreateNftInput {
+    public init(mintAccountState: AccountState, account: Account, name: String, symbol: String? = nil, uri: String, sellerFeeBasisPoints: UInt16, hasCreators: Bool, addressCount: UInt32, creators: [MetaplexCreator], isMutable: Bool) {
+        self.mintAccountState = mintAccountState
+        self.account = account
+        self.name = name
+        self.symbol = symbol
+        self.uri = uri
+        self.sellerFeeBasisPoints = sellerFeeBasisPoints
+        self.hasCreators = hasCreators
+        self.addressCount = addressCount
+        self.creators = creators
+        self.isMutable = isMutable
+    }
+
     let mintAccountState: AccountState
     let account: Account
     let name: String

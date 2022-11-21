@@ -25,6 +25,7 @@ public struct NetworkingResponse {
 }
 
 public class MemoryStorageDriver: StorageDriver {
+    public init() {}
     public func download(url: URL, onComplete: @escaping (Result<NetworkingResponse, StorageDriverError>) -> Void) {
         onComplete(.success(NetworkingResponse(data: Data(), response: URLResponse(url: url, mimeType: nil, expectedContentLength: 0, textEncodingName: nil))))
     }
